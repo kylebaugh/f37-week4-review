@@ -10,7 +10,11 @@ app.use(express.json())
 app.use(cors())
 
 // ENDPOINTS
+const {getDinos, addDino, deleteDino} = require('./controller')
 
+app.get('/dinos', getDinos)
+app.post('/dinos', addDino)
+app.delete('/dinos/:id', deleteDino)
 
 
 // Open door/port for my server
